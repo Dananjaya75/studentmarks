@@ -1,3 +1,4 @@
+
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -42,10 +43,13 @@ public class StudentMarks {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // System.out.println("Button clicked");
-                String name = txtName.getText();
-                int marks = Integer.parseInt(txtMarks.getText());
-                String result = marks >= 50 ? "Pass" : "Fail";
-                lblResult.setText(name + " " + result);
+                StudentDAO dao = new StudentDAO();
+                
+
+                // String name = dao.getText();
+                // int marks = Integer.parseInt(txtMarks.getText());
+                // String result = marks >= 50 ? "Pass" : "Fail";
+                // lblResult.setText(name + " " + result);
             }
 
         });
