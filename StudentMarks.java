@@ -39,17 +39,20 @@ public class StudentMarks {
         panel.add(lblResult);
         panel.add(btnCal);
 
+        Student s1 = new Student("Dananjaya", "40");
+        txtName.setText(s1.getName());
+        txtMarks.setText(s1.getMarks());
+
         btnCal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // System.out.println("Button clicked");
-                StudentDAO dao = new StudentDAO();
-                
 
-                // String name = dao.getText();
-                // int marks = Integer.parseInt(txtMarks.getText());
-                // String result = marks >= 50 ? "Pass" : "Fail";
-                // lblResult.setText(name + " " + result);
+                String name = txtName.getText();
+                String marks = txtMarks.getText();
+                int marks1 = Integer.parseInt(marks);
+                String result = marks1 >= 50 ? "Pass" : "Fail";
+                lblResult.setText(name + " " + result);
             }
 
         });
@@ -57,7 +60,7 @@ public class StudentMarks {
     }
 
     public static void main(String[] args) {
-        StudentMarks s1 = new StudentMarks();
+        new StudentMarks();
 
     }
 
